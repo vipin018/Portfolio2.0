@@ -53,6 +53,7 @@ export default class Home {
     this.homeIntro();
     this.homeAnimations();
     this.homeActions();
+    this.aboutSectionAnimation();
   }
 
   homeActions() {
@@ -195,6 +196,19 @@ export default class Home {
       },
       scaleX: 4,
       ease: "none",
+    });
+  }
+
+  aboutSectionAnimation() {
+    const aboutSection = document.querySelector('.about-section'); // Adjust the selector to match your HTML structure
+    const tl = gsap.timeline({
+      delay: 2.5, // Adjust the delay as needed
+    });
+     tl.from(aboutSection, {
+      duration: 1,
+      opacity: 0,
+      yPercent: 100, // Slide in from below
+      ease: "power4.out",
     });
   }
 }
